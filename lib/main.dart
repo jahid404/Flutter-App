@@ -27,7 +27,10 @@ class HomeActivity extends StatelessWidget {
         ),
         backgroundColor: Colors.blueAccent.shade200,
       ),
-      body: Text('Hey There!'),
+      body: Text(
+        'Hey There!',
+        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+      ),
     );
   }
 }
