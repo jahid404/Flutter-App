@@ -30,20 +30,14 @@ class HomeActivity extends StatelessWidget {
         foregroundColor: Colors.white,
         actions: [
           IconButton(
-            visualDensity: const VisualDensity(
-              horizontal: -4.0,
-              vertical: -4.0,
-            ),
+            visualDensity: VisualDensity(horizontal: -4.0, vertical: -4.0),
             onPressed: () => clickNotificationButton(context),
-            icon: const Icon(Icons.notifications, size: 28),
+            icon: Icon(Icons.notifications, size: 28),
           ),
           IconButton(
-            visualDensity: const VisualDensity(
-              horizontal: -4.0,
-              vertical: -4.0,
-            ),
+            visualDensity: VisualDensity(horizontal: -4.0, vertical: -4.0),
             onPressed: () => clickMenuButton(context),
-            icon: const Icon(Icons.menu_open_sharp, size: 28),
+            icon: Icon(Icons.menu_open_sharp, size: 28),
           ),
         ],
       ),
@@ -53,6 +47,17 @@ class HomeActivity extends StatelessWidget {
           color: Colors.blue.shade500,
           fontSize: 26,
           fontWeight: FontWeight.bold,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 5.0),
+        child: FloatingActionButton(
+          elevation: 6,
+          backgroundColor: Colors.blue.shade900,
+          foregroundColor: Colors.white,
+          onPressed: () => clickFloatingCartButton(context),
+          child: const Icon(Icons.shopping_cart, size: 28),
         ),
       ),
     );
@@ -78,5 +83,9 @@ class HomeActivity extends StatelessWidget {
 
   void clickMenuButton(BuildContext context) {
     showSnackbar(context, 'Menu button clicked');
+  }
+
+  void clickFloatingCartButton(BuildContext context) {
+    showSnackbar(context, 'Cart button clicked');
   }
 }
